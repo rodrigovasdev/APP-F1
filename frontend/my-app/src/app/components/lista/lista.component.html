@@ -1,0 +1,32 @@
+<table class="mi-tabla">
+
+    <thead>
+        <tr>
+            <th>Posición</th>
+            <th>Número</th>
+            <th>Piloto</th>
+            <th>Auto</th>
+            <th>Vueltas</th>
+            <th>Tiempo</th>
+            <th>Grand Prix</th>
+        </tr>
+    </thead>
+    
+
+    <tbody *ngFor="let carrera of carreras | paginate: { itemsPerPage: itemsPorPagina, currentPage: paginaActual }">
+        <tr>
+            <td>{{carrera.posicion}}</td>
+            <td>{{carrera.numero}}</td>
+            <td>{{carrera.piloto}}</td>
+            <td>{{carrera.auto}}</td>
+            <td>{{carrera.vueltas}}</td>
+            <td>{{carrera.tiempo}}</td>
+            <td>{{carrera.grandPrix}}</td>
+        </tr>
+  
+    </tbody>
+</table>
+
+<pagination-controls (pageChange)="cambiarPagina($event)"></pagination-controls>
+
+  
