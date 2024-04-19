@@ -5,27 +5,29 @@ Nombre: Rodrigo Vásquez
 A continuación, mi proyecto de desarrollo para la prueba, la cual nos muestra una lista
 de las carreras de la Fórmula 1 y sus corredores del 2022-2021
 
-Backend (puerto 8080): El backend fue desarrollado en springboot e integrando JPA. 
+Backend (alojado en el puerto 8080): El backend fue desarrollado en springboot e integrando JPA. 
 IMPORTANTE: en main/java/resources/application.properties definir adecuadamente los campos
 ######
 spring.datasource.url=jdbc:postgresql://localhost:5432/f1
 spring.datasource.username=postgres
 spring.datasource.password=a
 #####
-es decir la BD tiene que tener de nombre "f1" o bien cambiarlo respectivamente en el application.properties
-username el nombre de usuario de su BD
-y la password que hayan definido.
+Nombre BD :f1
+Nombre de usuario en PGAdmin
+Password que hayan definido al instalar PGAdmin
 
 
 
-Base de datos: Para la base de datos ocupe postgreSQL y PGAdmin, el archivo "create_tables"
-nos trae el script que crea las tablas, luego tenemos el archivo copy el cual trae el comando 
-COPY que asigna los valores del CSV a la base de datos. En mi caso importé el archivo CSV desde pgadmin, puesto que con el comando COPY me arrojaba un tipo de error por permisos.
+Base de datos: postgreSQL y PGAdmin
+Crear una base de datos en postgres PGAdmin4 
+Nombre BD: f1
+Para crear tablas: bd_scripts/create_tables.sql
+Para insertar datos: bd_scripts/copy.sql O Insertar el bd_scripts/sprint_results.csv desde PGAdmin4 (Al importar el csv desde PGAdmin deben considerar que la id es de tipo SERIAL y no esta en el archivo csv)
 
 Una vez importado el CSV nuestra BD esta lista!
 
 
-Frontend(puerto 4200): Para el frontend ocupé angular, puesto que era la tecnología más moderna que estaba mencionada en los ejemplos de la prueba.
+Frontend en Angular(alojado en el puerto 4200): 
 
 En un cmd ejecutar los siguientes comandos
 
@@ -34,8 +36,9 @@ ng new my-app
 cd my-app
 ng serve --open
 
-luego de esto el frontend debe estar corriendo!
-y para ejecutar las pruebas en angular el comando es "ng test"
+Ejecucion de pruebas: ng test
 
-Muchas gracias por su tiempo
+
+
+
 Saludos!
